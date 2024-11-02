@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import  { useEffect } from "react";
+import Login from "./Login";
 
 function Navbar() {
 
@@ -37,10 +38,10 @@ function Navbar() {
     </>
   );
   return (
-    <>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 ">
-        <div className="navbar bg-base-100 ">
-          <div className="navbar-start">
+    <><div className="max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50 dark:bg-slate-900 dark:text-white">
+      
+        <div className="navbar bg-base-100 dark:bg-slate-900 dark:text-white ">
+          <div className="navbar-start ">
             <div className="dropdown">
               <div
                 tabIndex={0}
@@ -64,7 +65,7 @@ function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow "
               >
                 {navItems}
               </ul>
@@ -77,7 +78,7 @@ function Navbar() {
             </div>
             <div className="hidden md:block">
               <label className="input input-bordered flex items-center gap-2">
-                <input type="text" className="grow" placeholder="Search" />
+                <input type="text" className="grow  dark:text-black" placeholder="Search" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -121,9 +122,15 @@ function Navbar() {
               </svg>
             </label>
             <div className="">
-              <a className="bg-black text-white p-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer">
-                Login
-              </a>
+            <a
+                  className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
+                  Login
+                </a>
+                <Login />
             </div>
           </div>
         </div>
